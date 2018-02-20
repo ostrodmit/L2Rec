@@ -1,13 +1,11 @@
-function [] = MC_sigm_plot_thesis(dim,ifPost,exper)
-clearvars -except dim ifPost exper
+function [] = MC_sigm_plot_thesis(dim,ifPost,exper,N)
+clearvars -except dim ifPost exper N
 format short
-if nargin < 2, exper='sin'; end
+if nargin < 3, exper='sin'; end
 if dim==1,
-    N=100;
-    respath = '../sines_sigm/';
+    respath = '../sines_sigm-1d/';
     Sce = [0,1];
 elseif dim==2,
-    N=40;
     if strcmp(exper,'sin'),
         respath = '../sines_sigm-2d/';
         Sce = [0,1];
