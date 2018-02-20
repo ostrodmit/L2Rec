@@ -1,7 +1,7 @@
-function [] = MC_sigm_sims(dim,ifPost,exper)
+function [] = MC_sigm_sims(dim,ifPost,exper,N)
 % dim={1,2}
 % exper={'sin','SI'}; 'sin' by default or if dim==1
-clearvars -except dim ifPost exper
+clearvars -except dim ifPost exper N
 if nargin < 3, exper='sin'; end
 rng(2,'twister'); % initialize random number generator
 logSNR = linspace(log(0.25), log(32), 8);
@@ -9,12 +9,10 @@ SNR = exp(logSNR);
 % K = [4 8 16];
 K = [4];
 if dim==1,
-    N=4;
     n = 100;
     methodErr = zeros(7+ifPost,2,length(K),length(SNR),N); % RanSin, CohSin
     Sce = [0,1];
 elseif dim==2,
-    N=40;
     n = 40;
     methodErr = zeros(7+ifPost,1,length(K),length(SNR),N); % RanSin or SingleIdx
     if strcmp(exper,'sin'), Sce = [0,1]; % RanSin, CohSin
@@ -110,7 +108,7 @@ for trial = 1:N,
 end
 close(wb);
 if dim==1,
-    respath = '../sines_sigm/';
+    respath = '../sines_sigm-1d/';
 else
     if strcmp(exper,'sin'),
         respath = '../sines_sigm-2d/';
