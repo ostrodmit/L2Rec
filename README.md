@@ -4,7 +4,7 @@ Matlab reproducible experiments from the [full version](https://arxiv.org/abs/16
 
 Dmitrii Ostrovskii, Zaid Harchaoui, Anatoli Judistky, Arkadi Nemirovski. [Structure-Blind Signal Recovery](https://papers.nips.cc/paper/6063-structure-blind-signal-recovery.pdf). NIPS 2016.
 
-We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for efficient implementation of adaptive signal denoising, including it as a submodule.
+We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for the efficient implementation of adaptive signal denoising, including them as a submodule.
 
 # Installation
 
