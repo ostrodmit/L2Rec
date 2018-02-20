@@ -1,4 +1,4 @@
-# Structure-Blind Signal Recovery, NIPS 2016
+# Structure-Blind Signal Recovery
 
 Matlab reproducible experiments from the [full version](https://arxiv.org/abs/1607.05712) of the following paper:
 
