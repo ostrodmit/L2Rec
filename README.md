@@ -10,5 +10,5 @@ We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for efficient i
 
 Download or clone the repository, then change to the code directory: 
 ```
->> cd AdaFilter-master/code
+>> cd l2rec/code
 ``` 
