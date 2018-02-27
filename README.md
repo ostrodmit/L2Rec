@@ -33,6 +33,7 @@ The experiments are launched via the following three **MATLAB** commands:
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
 - ``exp_singleidx(N,m,beta,ifReproduce)``.
 The output is generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
+
 The names of input parameters coincide with those in the paper: 
 - ``N`` is the number of trials; 
 - ``n`` is the number of samples in the 1D case; 
