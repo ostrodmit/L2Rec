@@ -46,9 +46,9 @@ After that, ``ifReproduce = 0`` can be used to produce the plots without running
 To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
 >> cd l2rec/nips16;
->> exp_spikes(100,100,4,1); % Experiment with 1D-spikes
->> exp_spikes2d(40,40,4,1); % Experiment with 2D-spikes
->> exp_singleIdx(40,40,2,1); % Dimension reduction experiments
+>> exp_spikes(100,100,4,1);       % Experiment with 1D-spikes
+>> exp_spikes2d(40,40,4,1);       % Experiment with 2D-spikes
+>> exp_singleIdx(40,40,2,1);      % Dimension reduction experiments
 >> exp_singleIdx(40,40,1,1);
 >> exp_singleIdx(40,40,0.5,1);
 ```
@@ -60,5 +60,6 @@ Run the following commands in **MATLAB**:
 ```
 >> cd l2rec/extra;
 >> sines2;
-
+>> singleIdx;
+>> brodatz;
 ```
