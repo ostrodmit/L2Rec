@@ -1,22 +1,22 @@
-function [] = MC_sigm_plot_thesis(dim,ifPost,exper,N)
-clearvars -except dim ifPost exper N
+function [] = MC_sigm_plot_thesis(dim,ifPost,exper,N,m,k)
+clearvars -except dim ifPost exper N m k
 format short
 if nargin < 3, exper='sin'; end
 if dim==1,
-    respath = '../sines_sigm-1d/';
+    respath = './sines_sigm-1d/';
     Sce = [0,1];
 elseif dim==2,
     if strcmp(exper,'sin'),
-        respath = '../sines_sigm-2d/';
+        respath = './sines_sigm-2d/';
         Sce = [0,1];
     else
-        respath = '../SI_sigm-2d/';
+        respath = './SI_sigm-2d/';
         Sce = [2];
     end
 else
     error('dim must be 1 or 2');
 end
-statfile = [respath 'stats-N-' num2str(N) '.mat'];
+statfile = [respath 'stats-N-' num2str(N) '-n-' num2str(m) '-k-' num2str(k) '.mat'];
 load(statfile)
 ssize = size(methodErr);
 markerSize = [18 18 24];
@@ -109,42 +109,46 @@ for kInd = 1:ssize(3),
         set(gcf, 'PaperSize', [11.69 8.27]); % paper size (A4), landscape
         % Extend the plot to fill entire paper.
         set(gcf, 'PaperPosition', [0 0 11.69 8.27]);
-        print('-depsc',[respath 'comp' num2str(sc-1) '.eps']);
-        saveas(gcf,[respath 'comp' num2str(sc-1) '-' num2str(kInd) '.pdf'],'pdf');
+        if sc == 1, scenario = ['RandomSpikes-m-' num2str(m) '-k-' num2str(k)]; end
+        if sc == 2, scenario = ['CoherentSpikes-m-' num2str(m) '-k-' num2str(k)]; end
+        if sc == 3, scenario = ['DimensionReduction-m-' num2str(m) '-beta-' num2str(k)]; end
+        print('-depsc',[respath scenario '.eps']);
+        saveas(gcf,[respath scenario '.pdf'],'pdf');
     end
-    if dim == 1,
-        figure
-        loglog(1./SNR,squeeze(mean(methodErr(4,2,kInd,:,:),5)),'r-.','Marker', 'diamond', ...
-            'MarkerFaceColor', 'r', 'MarkerEdgeColor', 'r', 'MarkerSize', markerSize(sc),...
-            'LineWidth',lineWidth(sc)); %10,'LineWidth',3);
-             % l2conk
-        hold on
-        loglog(1./SNR,squeeze(mean(methodErr(5,2,kInd,:,:),5)),'r-','Marker', 'diamond', ...
-            'MarkerFaceColor', 'w', 'MarkerEdgeColor', 'r', 'MarkerSize', markerSize(sc),...
-            'LineWidth',lineWidth(sc)); %10,'LineWidth',3);
-             % l2conk2
-        hold on
-        %xlim([0.1,10]);
-        xlim([1/16,4]);
-        %ylim([2.5,30]);
-        ylim([0.02,1]);
-        xlabel('SNR$^{-1}$','interpreter','latex','fontsize',axisLabelFontSize(sc));
-        %ylabel('$\ell_2$-error','interpreter','latex','fontsize',axisLabelFontSize(sc));
-        set(gca,'FontSize',axisMarksFontSize(sc));
-        set(gca,'XTick', [0.1 0.25 0.5 1 2 4 10]);
-        %set(gca,'XTick', [1/32 1/16 1/8 1/4 1/2 1 2 4]);
-        %set(gca,'YTick', [2.5 5 10 20 30]);
-        set(gca,'YTick', [0.05 0.1 0.25 0.5 1 2 4 10]);
-        l=legend('Con. $\ell_2$-rec., $\overline{\varrho}=4$','Con. $\ell_2$-rec., $\overline{\varrho}=16$',...
-            'Location','southeast');
-        set(l,'Interpreter','latex','fontsize',legendFontSize(sc));
-        %set(gcf,'PaperPositionMode','Auto');
-        set(gcf,'defaulttextinterpreter','latex');    
-        set(gcf, 'PaperSize', [11.69 8.27]); % paper size (A4), landscape
-        % Extend the plot to fill entire paper.
-        set(gcf, 'PaperPosition', [0 0 11.69 8.27]);
-        print('-depsc',[respath 'comp3.eps']);
-        saveas(gcf,[respath 'comp3.pdf'],'pdf');
-    end
+    % the last plot is not needed
+%     if dim == 1,
+%         figure
+%         loglog(1./SNR,squeeze(mean(methodErr(4,2,kInd,:,:),5)),'r-.','Marker', 'diamond', ...
+%             'MarkerFaceColor', 'r', 'MarkerEdgeColor', 'r', 'MarkerSize', markerSize(sc),...
+%             'LineWidth',lineWidth(sc)); %10,'LineWidth',3);
+%              % l2conk
+%         hold on
+%         loglog(1./SNR,squeeze(mean(methodErr(5,2,kInd,:,:),5)),'r-','Marker', 'diamond', ...
+%             'MarkerFaceColor', 'w', 'MarkerEdgeColor', 'r', 'MarkerSize', markerSize(sc),...
+%             'LineWidth',lineWidth(sc)); %10,'LineWidth',3);
+%              % l2conk2
+%         hold on
+%         %xlim([0.1,10]);
+%         xlim([1/16,4]);
+%         %ylim([2.5,30]);
+%         ylim([0.02,1]);
+%         xlabel('SNR$^{-1}$','interpreter','latex','fontsize',axisLabelFontSize(sc));
+%         %ylabel('$\ell_2$-error','interpreter','latex','fontsize',axisLabelFontSize(sc));
+%         set(gca,'FontSize',axisMarksFontSize(sc));
+%         set(gca,'XTick', [0.1 0.25 0.5 1 2 4 10]);
+%         %set(gca,'XTick', [1/32 1/16 1/8 1/4 1/2 1 2 4]);
+%         %set(gca,'YTick', [2.5 5 10 20 30]);
+%         set(gca,'YTick', [0.05 0.1 0.25 0.5 1 2 4 10]);
+%         l=legend('Con. $\ell_2$-rec., $\overline{\varrho}=4$','Con. $\ell_2$-rec., $\overline{\varrho}=16$',...
+%             'Location','southeast');
+%         set(l,'Interpreter','latex','fontsize',legendFontSize(sc));
+%         %set(gcf,'PaperPositionMode','Auto');
+%         set(gcf,'defaulttextinterpreter','latex');    
+%         set(gcf, 'PaperSize', [11.69 8.27]); % paper size (A4), landscape
+%         % Extend the plot to fill entire paper.
+%         set(gcf, 'PaperPosition', [0 0 11.69 8.27]);
+%         print('-depsc',[respath 'comp3.eps']);
+%         saveas(gcf,[respath 'comp3.pdf'],'pdf');
+%     end
 end
 end
