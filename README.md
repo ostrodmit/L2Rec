@@ -29,7 +29,7 @@ l2rec/nips16
 l2rec/extra
 ```
 
-## Main text experiments
+## Experiments from the main text
 
 Change directory to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
 ```
@@ -58,4 +58,4 @@ The choice of parameters in the paper corresponds to:
 ```
 However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m``.
 
-## Supplementary experiments
+## Experiments from the supplementary
