@@ -16,7 +16,7 @@ elseif dim==2,
 else
     error('dim must be 1 or 2');
 end
-statfile = [respath 'stats-N-' num2str(N) '-n-' num2str(m) '-k-' num2str(k) '.mat'];
+statfile = [respath 'stats-N-' num2str(N) '-m-' num2str(m) '-k-' num2str(k) '.mat'];
 load(statfile)
 ssize = size(methodErr);
 markerSize = [18 18 24];
