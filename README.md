@@ -6,9 +6,11 @@ Dmitrii Ostrovskii, Zaid Harchaoui, Anatoli Judistky, Arkadi Nemirovski. [Struct
 
 We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for the efficient implementation of adaptive signal denoising, including them as a submodule.
 
-# Installation
+# Usage
 
-Download or clone the repository, then change to the code directory: 
+Download or clone the repository.
+
+1. To reproduce the experiments from the main paper, add the following paths in **MATLAB**: 
 ```
->> cd l2rec/code
+>> cd l2rec/nips16
 ``` 
