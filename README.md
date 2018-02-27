@@ -29,12 +29,10 @@ l2rec/extra
 ## Experiments from the main text
 
 Change directory to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
-```
-exp_spikes(N,n,k,ifReproduce);
-exp_spikes2d(N,m,k,ifReproduce);
-exp_singleidx(N,m,s,ifReproduce); 
-```
-The output will be generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
+- ``exp_spikes(N,n,k,ifReproduce)``;
+- ``exp_spikes2d(N,m,k,ifReproduce)``;
+- ``exp_singleidx(N,m,s,ifReproduce)``.
+The output is generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
 
 Note that the names of input parameters coincide with those in the paper: 
 - ``N`` is the number of trials; 
@@ -53,6 +51,6 @@ The choice of parameters in the paper corresponds to:
 >> exp_singleIdx(40,40,1,1);
 >> exp_singleIdx(40,40,0.5,1);
 ```
-However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m``.
+However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
 
 ## Experiments from the supplementary
