@@ -6,7 +6,7 @@ Dmitrii Ostrovskii, Zaid Harchaoui, Anatoli Judistky, Arkadi Nemirovski. [Struct
 
 We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for the efficient implementation of adaptive signal denoising, including them as a submodule.
 
-# Usage
+# Installation
 
 Download or clone the repository, and add the following paths in **MATLAB**: 
 ```
@@ -15,9 +15,9 @@ l2rec/AdaFilter/Brodatz
 l2rec/nips16
 l2rec/extra
 ```
-To reproduce the Monte-Carlo experiments from the main text, go to ``l2rec/nips16``, and run in **MATLAB**: 
-```
->> exp_spikes(N,n,k,1);
->> exp_spikes2d(N,m,k,1);
->> exp_singleidx(N,m,k,1);
-``` 
+# Usage
+
+## Experiments from the main text
+
+Go to ``l2rec/nips16``. The experiments are laucnched via the following three commands: ``exp_spikes(N,n,k,ifReproduce)``, ``exp_spikes2d(N,m,k,ifReproduce)``, ``>> exp_singleidx(N,m,s,ifReproduce);``. 
+
