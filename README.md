@@ -19,13 +19,13 @@ l2rec/extra
 
 ## Monte-Carlo experiments
 
-Go to ``l2rec/nips16``. The experiments are laucnched via the following three **MATLAB** commands: 
+Go to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
 ```
 exp_spikes(N,n,k,ifReproduce);
 exp_spikes2d(N,m,k,ifReproduce);
 exp_singleidx(N,m,s,ifReproduce); 
 ```
-The names of input parameters coincides with those in the paper: 
+The names of input parameters coincide with those in the paper: 
 - ``N`` is the number of trials; 
 - ``n`` is the number of samples in the 1D case; 
 - ``m`` is the grid size in the 2D case; 
@@ -33,3 +33,12 @@ The names of input parameters coincides with those in the paper:
 - ``s`` is the smoothness index. 
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
 After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations. 
+
+The choice of parameters in the paper corresponds to:
+```
+exp_spikes(100,100,4,1);
+exp_spikes2d(40,40,4,1);
+exp_singleidx(40,40,2,2);
+exp_singleidx(40,40,2,1);
+exp_singleidx(40,40,2,0.5);
+```
