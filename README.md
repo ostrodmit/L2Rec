@@ -53,4 +53,4 @@ The choice of parameters in the paper corresponds to:
 ```
 However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
 
-## Experiments from the supplementary
+## Experiments from the supplementary material
