@@ -25,5 +25,4 @@ exp_spikes(N,n,k,ifReproduce);
 exp_spikes2d(N,m,k,ifReproduce);
 exp_singleidx(N,m,s,ifReproduce); 
 ```
-
-
+The names of input parameters coincides with those in the paper: ``N`` is the number of trials, ``n`` is the number of samples in the 1D case, ``m`` is the grid size in the 2D case, ``k`` is the number of spikes, and ``s`` is the smoothness index. 
