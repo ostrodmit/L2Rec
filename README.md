@@ -28,7 +28,7 @@ l2rec/extra
 
 ## Experiments from the main text
 
-Change directory to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
+The experiments are launched via the following three **MATLAB** commands: 
 - ``exp_spikes(N,n,k,ifReproduce)``;
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
 - ``exp_singleidx(N,m,beta,ifReproduce)``.
@@ -46,6 +46,7 @@ After that, ``ifReproduce = 0`` can be used to produce the plots without running
 
 To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
+>> cd l2rec/nips16;
 >> exp_spikes(100,100,4,1);
 >> exp_spikes2d(40,40,4,1);
 >> exp_singleIdx(40,40,2,1);
@@ -54,4 +55,9 @@ To reproduce the figures from the paper, execute the following commands in **MAT
 ```
 Simulations will run for hours with these choice of parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
 
-## Experiments from the supplementary material
+## Experiments from the supplementary
+
+Run the following commands in **MATLAB**:
+```
+>> cd l2rec/extra;
+```
