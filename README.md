@@ -5,15 +5,12 @@ Matlab reproducible experiments from the [full version](https://arxiv.org/abs/16
 Dmitrii Ostrovskii, Zaid Harchaoui, Anatoli Judistky, Arkadi Nemirovski. [Structure-Blind Signal Recovery](https://papers.nips.cc/paper/6063-structure-blind-signal-recovery.pdf). NIPS 2016.
 
 ```
-@incollection{NIPS2016_6063,
-title = {Structure-Blind Signal Recovery},
-author = {Ostrovsky, Dmitry and Harchaoui, Zaid and Juditsky, Anatoli and Nemirovski, Arkadi S},
-booktitle = {Advances in Neural Information Processing Systems 29},
-editor = {D. D. Lee and M. Sugiyama and U. V. Luxburg and I. Guyon and R. Garnett},
-pages = {4817--4825},
-year = {2016},
-publisher = {Curran Associates, Inc.},
-url = {http://papers.nips.cc/paper/6063-structure-blind-signal-recovery.pdf}
+@inproceedings{ostrovsky2016structure,
+  title={Structure-Blind Signal Recovery},
+  author={Ostrovsky, D and Harchaoui, Z and Juditsky, A and Nemirovski, A},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={4817--4825},
+  year={2016}
 }
 ```
 
