@@ -17,7 +17,13 @@ l2rec/extra
 ```
 # Usage
 
-## Experiments from the main text
+## Monte-Carlo experiments
 
-Go to ``l2rec/nips16``. The experiments are laucnched via the following three commands: ``exp_spikes(N,n,k,ifReproduce)``, ``exp_spikes2d(N,m,k,ifReproduce)``, ``>> exp_singleidx(N,m,s,ifReproduce);``. 
+Go to ``l2rec/nips16``. The experiments are laucnched via the following three **MATLAB** commands: 
+```
+exp_spikes(N,n,k,ifReproduce);
+exp_spikes2d(N,m,k,ifReproduce);
+exp_singleidx(N,m,s,ifReproduce); 
+```
+
 
