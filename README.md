@@ -42,7 +42,7 @@ Note that the names of input parameters coincide with those in the paper:
 - ``beta`` is the smoothness index. 
 
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
-After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations again.
+After that, ``ifReproduce = 0`` can be used to produce the plots without running the simulations again.
 
 To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
