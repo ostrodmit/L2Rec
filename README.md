@@ -28,9 +28,8 @@ l2rec/AdaFilter/Brodatz
 l2rec/nips16
 l2rec/extra
 ```
-## Usage
 
-### Monte-Carlo experiments
+## Main experiments
 
 Go to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
 ```
@@ -56,3 +55,5 @@ exp_singleIdx(40,40,1,1);
 exp_singleIdx(40,40,0.5,1);
 ```
 However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, and ``m``.
+
+## Supplementary experiments
