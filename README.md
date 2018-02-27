@@ -43,7 +43,7 @@ Note that the names of input parameters coincide with those in the paper:
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
 After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations. 
 
-The choice of parameters in the paper corresponds to:
+To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
 >> exp_spikes(100,100,4,1);
 >> exp_spikes2d(40,40,4,1);
@@ -51,6 +51,6 @@ The choice of parameters in the paper corresponds to:
 >> exp_singleIdx(40,40,1,1);
 >> exp_singleIdx(40,40,0.5,1);
 ```
-However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
+However, the simulations will run for hours with these choice of parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
 
 ## Experiments from the supplementary material
