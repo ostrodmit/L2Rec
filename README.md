@@ -51,7 +51,8 @@ The choice of parameters in the paper corresponds to:
 ```
 exp_spikes(100,100,4,1);
 exp_spikes2d(40,40,4,1);
-exp_singleidx(40,40,2,2);
-exp_singleidx(40,40,2,1);
-exp_singleidx(40,40,2,0.5);
+exp_singleIdx(40,40,2,1);
+exp_singleIdx(40,40,1,1);
+exp_singleIdx(40,40,0.5,1);
 ```
+However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, and ``m``.
