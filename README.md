@@ -33,8 +33,7 @@ The experiments are launched via the following three **MATLAB** commands:
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
 - ``exp_singleidx(N,m,beta,ifReproduce)``.
 The output is generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
-
-Note that the names of input parameters coincide with those in the paper: 
+The names of input parameters coincide with those in the paper: 
 - ``N`` is the number of trials; 
 - ``n`` is the number of samples in the 1D case; 
 - ``m`` is the grid size in the 2D case; 
@@ -47,17 +46,19 @@ After that, ``ifReproduce = 0`` can be used to produce the plots without running
 To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
 >> cd l2rec/nips16;
->> exp_spikes(100,100,4,1);
->> exp_spikes2d(40,40,4,1);
->> exp_singleIdx(40,40,2,1);
+>> exp_spikes(100,100,4,1); % Experiment with 1D-spikes
+>> exp_spikes2d(40,40,4,1); % Experiment with 2D-spikes
+>> exp_singleIdx(40,40,2,1); % Dimension reduction experiments
 >> exp_singleIdx(40,40,1,1);
 >> exp_singleIdx(40,40,0.5,1);
 ```
-Simulations will run for hours with these choice of parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
+Note that simulations will be running for hours with these choice of parameters, so one might want to use smaller values of ``N``, ``n``, ``m`` for faster results.
 
 ## Experiments from the supplementary
 
 Run the following commands in **MATLAB**:
 ```
 >> cd l2rec/extra;
+>> sines2;
+
 ```
