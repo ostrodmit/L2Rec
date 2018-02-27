@@ -51,6 +51,6 @@ To reproduce the figures from the paper, execute the following commands in **MAT
 >> exp_singleIdx(40,40,1,1);
 >> exp_singleIdx(40,40,0.5,1);
 ```
-However, the simulations will run for hours with these choice of parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
+Simulations will run for hours with these choice of parameters, so one can use smaller values of ``N``, ``n``, ``m`` for faster results.
 
 ## Experiments from the supplementary material
