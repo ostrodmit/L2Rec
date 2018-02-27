@@ -31,7 +31,7 @@ l2rec/extra
 Change directory to ``l2rec/nips16``. The experiments are launched via the following three **MATLAB** commands: 
 - ``exp_spikes(N,n,k,ifReproduce)``;
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
-- ``exp_singleidx(N,m,s,ifReproduce)``.
+- ``exp_singleidx(N,m,beta,ifReproduce)``.
 The output is generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
 
 Note that the names of input parameters coincide with those in the paper: 
@@ -39,7 +39,7 @@ Note that the names of input parameters coincide with those in the paper:
 - ``n`` is the number of samples in the 1D case; 
 - ``m`` is the grid size in the 2D case; 
 - ``k`` is the number of spikes; 
-- ``s`` is the smoothness index. 
+- ``beta`` is the smoothness index. 
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
 After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations. 
 
