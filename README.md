@@ -32,4 +32,4 @@ The names of input parameters coincides with those in the paper:
 - ``k`` is the number of spikes; 
 - ``s`` is the smoothness index. 
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
-After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations again.
+After that, ``ifReproduce = 0`` can be used to produce the plots without launching the simulations. 
