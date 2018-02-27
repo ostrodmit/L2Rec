@@ -26,7 +26,7 @@ l2rec/nips16
 l2rec/extra
 ```
 
-## Experiments from the main text
+## Experiments in the main text
 
 The experiments are launched via the following three **MATLAB** commands: 
 - ``exp_spikes(N,n,k,ifReproduce)``;
@@ -54,7 +54,7 @@ To reproduce the figures from the paper, execute the following commands in **MAT
 ```
 Note that simulations will be running for hours with these choice of parameters, so one might want to use smaller values of ``N``, ``n``, ``m`` for faster results.
 
-## Experiments from the supplementary
+## Experiments in the supplementary material
 
 Run the following commands in **MATLAB**:
 ```
