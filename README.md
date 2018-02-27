@@ -37,7 +37,7 @@ exp_spikes(N,n,k,ifReproduce);
 exp_spikes2d(N,m,k,ifReproduce);
 exp_singleidx(N,m,s,ifReproduce); 
 ```
-The output will be generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/singleIdx``.
+The output will be generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
 
 Note that the names of input parameters coincide with those in the paper: 
 - ``N`` is the number of trials; 
@@ -50,12 +50,12 @@ After that, ``ifReproduce = 0`` can be used to produce the plots without launchi
 
 The choice of parameters in the paper corresponds to:
 ```
-exp_spikes(100,100,4,1);
-exp_spikes2d(40,40,4,1);
-exp_singleIdx(40,40,2,1);
-exp_singleIdx(40,40,1,1);
-exp_singleIdx(40,40,0.5,1);
+>> exp_spikes(100,100,4,1);
+>> exp_spikes2d(40,40,4,1);
+>> exp_singleIdx(40,40,2,1);
+>> exp_singleIdx(40,40,1,1);
+>> exp_singleIdx(40,40,0.5,1);
 ```
-However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, and ``m``.
+However, the simulations run for hours with these parameters, so one can use smaller values of ``N``, ``n``, ``m``.
 
 ## Supplementary experiments
