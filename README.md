@@ -63,9 +63,7 @@ Run the following commands in **MATLAB**:
 >> cd l2rec/extra;                
 >> sines2;                        % Random 2D sines
 ```
-Computation takes about 2 minutes on one computer; the result will appear in ``l2rec/extra/sines2``. 
-Unfortunately, the correct seed was lost, so one can see a slightly different pattern.
-
+Simulation will run for several minutes; the result will appear in ``l2rec/extra/sines2``.
 The next two experiments take longer time (hours):
 ```
 >> singleIdx;                     % Single-index signal
