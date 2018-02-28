@@ -6,10 +6,10 @@ k = 4;
 snr = 0.5;
 sce = ['RanSin-' num2str(k)];
 [x,y,sigm] = generate_data2(sce,n,snr);
-%% 
-% Normalize
-Z  = norm(x(:));
-x = x ./ Z; y = y ./ Z; sigm = sigm / Z;
+% %% 
+% % Normalize
+% Z  = norm(x(:));
+% x = x ./ Z; y = y ./ Z; sigm = sigm / Z;
 %% 
 % Denoise via Recht's oversampled Lasso.
 tic; recl = lasso_recovery(y,sigm); toc
@@ -33,10 +33,10 @@ tic; recf = filter_recovery(y,params,solver_control); toc
 %%
 % Plot the results
 mode = 'mine'; % {'img', 'mesh', 'surf', 'gamma', 'grey', 'mine'}
-save_pics='../nips/sines2/';
+save_pics='./sines2/';
 params.sce=sce;
 plot_recovery_results2(params,mode,save_pics,x,y,recf,recl);
 ns=floor(n/8);
-save_pics='../nips/sines2-mag/';
-% plot_recovery_results2(params,mode,save_pics,x(1:ns,1:ns),...
-%     y(1:ns,1:ns),recf(1:ns,1:ns),recl(1:ns,1:ns));
+save_pics='./sines2-mag/';
+plot_recovery_results2(params,mode,save_pics,x(1:ns,1:ns),...
+    y(1:ns,1:ns),recf(1:ns,1:ns),recl(1:ns,1:ns));
