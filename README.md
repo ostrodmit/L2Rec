@@ -20,10 +20,10 @@ We use [AdaFilter](https://github.com/ostrodmit/AdaFilter) codes for the efficie
 
 Download or clone the repository, and add the following paths in **MATLAB**: 
 ```
-l2rec/AdaFilter/code
-l2rec/AdaFilter/Brodatz
-l2rec/nips16
-l2rec/extra
+L2Rec/AdaFilter/code
+L2Rec/AdaFilter/Brodatz
+L2Rec/nips16
+L2Rec/extra
 ```
 
 ## Experiments in the main text
@@ -47,7 +47,7 @@ After that, ``ifReproduce = 0`` can be used to produce the plots without running
 
 To reproduce the figures from the paper, execute the following commands in **MATLAB**:
 ```
->> cd l2rec/nips16;
+>> cd L2Rec/nips16;
 >> exp_spikes(100,100,4,1);       % Experiment with 1D-spikes
 >> exp_spikes2d(40,40,4,1);       % Experiment with 2D-spikes
 >> exp_singleIdx(40,40,2,1);      % Dimension reduction experiments
@@ -60,7 +60,7 @@ Note that simulations will be running for hours with these choice of parameters,
 
 Run the following commands in **MATLAB**:
 ```
->> cd l2rec/extra;                
+>> cd L2Rec/extra;                
 >> sines2;                        % Random 2D sines
 ```
 Simulation will run for several minutes; the result will appear in ``l2rec/extra/sines2``.
@@ -69,4 +69,4 @@ The next two experiments take longer time (hours):
 >> singleIdx;                     % Single-index signal
 >> brodatz;                       % Brodatz pictures via blockwise Lepski's method
 ```
-The results will appear in ``l2rec/extra/singleIdx`` and ``l2rec/extra/brodatz``.
+The results will appear in ``L2Rec/extra/singleIdx`` and ``L2Rec/extra/brodatz``.
