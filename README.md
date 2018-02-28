@@ -32,6 +32,7 @@ The experiments are launched via the following three **MATLAB** commands:
 - ``exp_spikes(N,n,k,ifReproduce)``;
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
 - ``exp_singleidx(N,m,beta,ifReproduce)``.
+
 The output is generated in folders ``l2rec/nips16/sines_sigm-1d``, ``l2rec/nips16/sines_sigm-2d``, and ``l2rec/nips16/SI_sigm-2d``.
 
 The names of input parameters coincide with those in the paper: 
@@ -59,8 +60,15 @@ Note that simulations will be running for hours with these choice of parameters,
 
 Run the following commands in **MATLAB**:
 ```
->> cd l2rec/extra;
->> sines2;
->> singleIdx;
->> brodatz;
+>> cd l2rec/extra;                
+>> sines2;                        % Random 2D sines
 ```
+Computation takes about 2 minutes on one computer; the result will appear in ``l2rec/extra/sines2``. 
+Unfortunately, the correct seed was lost, so one can see a slightly different pattern.
+
+The next two experiments take longer time (hours):
+```
+>> singleIdx;                     % Single-index signal
+>> brodatz;                       % Brodatz pictures via blockwise Lepski's method
+```
+The results will appear in ``l2rec/extra/singleIdx`` and ``l2rec/extra/brodatz``.
