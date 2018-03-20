@@ -28,7 +28,7 @@ L2Rec/extra
 
 ## Experiments in the main text
 
-The experiments are launched via the following three **MATLAB** commands: 
+The experiments are launched via the following three MATLAB commands: 
 - ``exp_spikes(N,n,k,ifReproduce)``;
 - ``exp_spikes2d(N,m,k,ifReproduce)``;
 - ``exp_singleidx(N,m,beta,ifReproduce)``.
@@ -45,7 +45,7 @@ The names of input parameters coincide with those in the paper:
 Running a script with ``ifReproduce = 1`` will first launch simulations, and then produce plots for the obtained data. 
 After that, ``ifReproduce = 0`` can be used to produce the plots without running the simulations again.
 
-To reproduce the figures from the paper, execute the following commands in **MATLAB**:
+To reproduce the figures from the paper, execute the following commands in MATLAB:
 ```
 >> cd L2Rec/nips16;
 >> exp_spikes(100,100,4,1);       % Experiment with 1D-spikes
@@ -58,7 +58,7 @@ Note that simulations will be running for hours with these choice of parameters,
 
 ## Experiments in the supplementary material
 
-Run the following commands in **MATLAB**:
+Run the following commands in MATLAB:
 ```
 >> cd L2Rec/extra;                
 >> sines2;                        % Random 2D sines
