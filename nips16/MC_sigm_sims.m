@@ -42,7 +42,7 @@ for trial = 1:N,
             % Denoise via Recht's oversampled Lasso.
             recl = lasso_recovery(y,sigm);
             %%
-            % Denoise via constrained l2-filtering.
+            %% Denoise via constrained l2-filtering.
             clear params
             params.rho=k;
             params.lep=0; % no bandwidth adaptation
@@ -53,17 +53,26 @@ for trial = 1:N,
             solver_control = struct('p',2,'constrained',1,...
                 'solver','nes','tol',1e-8,'eps',sigm,...
                 'max_iter',10000,'max_cpu',1000,...
-                'l2_prox',1,'online',1,'verbose',0);
+                'l2_prox',1,'online',0,'verbose',0);
             solver_control.sigm = sigm;
 %                 recf2conk = filter_recovery(y,params,solver_control);
             params.rho=k^2;
 %                 recf2conk2 = filter_recovery(y,params,solver_control);
+            %% Denoise via constrained l_inf-filtering
             solver_control.p=inf;
+            solver.control.online=0;
             solver_control.solver='mp';
             params.rho=k;
-%                 recf8conk = filter_recovery(y,params,solver_control);
+%             recf8conk = filter_recovery(y,params,solver_control);
             params.rho=k^2;
 %                 recf8conk2 = filter_recovery(y,params,solver_control);
+            %% Denoise via penalized l_inf-filtering
+            solver_control.constrained=0;
+            solver_control.max_iter=3000;
+            solver_control.lambda=4*sigm*sqrt(log((m/2)^dim));
+            recf8pen = filter_recovery(y,params,solver_control);
+            %% Denoise via penalized l2-filtering
+            solver.control.online=1;
             solver_control.constrained=0;
             solver_control.p=2;
             solver_control.solver='nes';
@@ -80,8 +89,11 @@ for trial = 1:N,
             % Save stats
             methodErr(1,sc+1,1,find(SNR==snr),trial)...
                 = norm(recl(:)-x(:));       % AST
-%                 methodErr(2,sc+1,find(K==k),find(SNR==snr),trial)...
-%                     = norm(recf8conk(:)-x(:));  % l8conk
+            %%
+            methodErr(2,sc+1,1,find(SNR==snr),trial)...
+                = norm(recf8pen(:)-x(:)); % l8pen
+%             methodErr(3,sc+1,1,find(SNR==snr),trial)...
+%                 = norm(recf8conk(:)-x(:));  % l8conk
 %                 methodErr(3,sc+1,find(K==k),find(SNR==snr),trial)...
 %                     = norm(recf8conk2(:)-x(:)); % l8conk2
 %                 methodErr(4,sc+1,find(K==k),find(SNR==snr),trial)...

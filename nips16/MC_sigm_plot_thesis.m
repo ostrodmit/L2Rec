@@ -34,6 +34,14 @@ for kInd = 1:ssize(3),
 %             'LineWidth', lineWidth(sc)); % AST
         bl.LineWidth = lineWidth(sc);
         hold on
+        %% UFR (Thanks to O. Cappe!)
+        bl = errorbar(1./SNR,squeeze(mean(methodErr(2,sc,kInd,:,:),5)),...
+                2*squeeze(std(methodErr(2,sc,kInd,:,:),1,5))./sqrt(N),'m-'); % l8pen
+        bl.LineWidth = lineWidth(sc);
+%         bl = errorbar(1./SNR,squeeze(mean(methodErr(3,sc,kInd,:,:),5)),...
+%                 2*squeeze(std(methodErr(3,sc,kInd,:,:),1,5))./sqrt(N),'c-'); % l8conk
+%         bl.LineWidth = lineWidth(sc);
+        %%
     %     loglog(1./SNR,squeeze(mean(methodErr(2,sc,kInd,:,:),5)),'g-','Marker', 'square', ...
     %         'MarkerFaceColor', 'w', 'MarkerEdgeColor', 'g', 'MarkerSize', 12,...
     %         'LineWidth',3); % l8conk    
@@ -97,9 +105,9 @@ for kInd = 1:ssize(3),
         set(gca,'xticklabels', {'0.06','0.12','0.25','0.5','1','2','4'});
         %set(gca,'YTick', [2.5 5 10 20]);
         set(gca,'YTick', [0.005 0.01 0.025 0.05 0.1 0.25 0.5 1 2 4]);
-        l=legend('Lasso (AST)','Pen. LSR','Location','southeast');
+        l=legend('Lasso','Pen-UF','Pen-LS','Location','southeast');
         if ifPost,
-            l=legend('Lasso (AST)','Pen. LSR','post','esprit','Location','southeast');
+            l=legend('Lasso','Pen-UF','Pen-LS','post','esprit','Location','southeast');
         end
         %'Pen. $\ell_2$-recovery, $\lambda_{pract}$','Pen. $\ell_2$-recovery, $\lambda_{theor}$','Location','southeast');
             %'Constrained $\ell_\infty$-recovery','Constrained $\ell_2$-recovery',
